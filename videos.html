@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فيديو - كورة90</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Video Modal */
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-modal.open {
+      display: flex;
+    }
+    .video-modal-inner {
+      width: 90%;
+      max-width: 860px;
+      position: relative;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -44px;
+      left: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-ar);
+    }
+    .video-modal-player {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 18px;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .video-modal-player svg {
+      width: 64px;
+      height: 64px;
+      color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" onclick="closeModal()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        إغلاق
+      </button>
+      <div class="video-modal-player">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <p>سيتم تشغيل الفيديو بعد ربط مصادر الفيديو</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  
+
+  <!-- Category Filter Tabs -->
+  <div class="health-cats" style="background:#f8f9fa;">
+    <button class="health-cat-btn active">▶ الكل</button>
+    <button class="health-cat-btn">🏆 أهداف وملخصات</button>
+    <button class="health-cat-btn">🎙 مؤتمرات صحفية</button>
+    <button class="health-cat-btn">📊 تحليلات مرئية</button>
+    <button class="health-cat-btn">🎤 مقابلات</button>
+    <button class="health-cat-btn">🏟 فيديوهات خلف الكواليس</button>
+    <button class="health-cat-btn">⚽ مهارات وتقنيات</button>
+  </div>
+
+  <main>
+    <!-- Featured Video -->
+    <div class="videos-featured">
+      <div class="video-hero" onclick="openModal()">
+        <div style="width:100%; height:460px; background:linear-gradient(135deg, #0d1a0f 0%, #1a7a3c 60%, #0d5a2c 100%); display:flex; align-items:center; justify-content:center; font-size:120px;">⚽</div>
+        <div class="video-hero-overlay">
+          <div class="video-hero-meta">
+            <span class="video-hero-cat">ملخص المباراة</span>
+            <span class="video-hero-views">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              2.4 مليون مشاهدة
+            </span>
+          </div>
+          <h2 class="video-hero-title">ملخص مذهل: ريال مدريد 4 - 2 مانشستر سيتي<br/>أهداف وأحداث مباراة الأبطال الكاملة</h2>
+        </div>
+        <div class="video-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span class="video-hero-duration">14:32</span>
+      </div>
+    </div>
+
+    <!-- Latest Videos Section -->
+    <h2 class="videos-section-title">أحدث الفيديوهات</h2>
+    <div class="videos-grid">
+
+      <!-- Video 1 -->
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#1a3a7a,#2255bb); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">🔵</div>
+          <div class="video-card-play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="video-card-duration">05:47</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">أهداف</span>
+          <h3 class="video-card-title">أجمل أهداف الجولة الـ34 من الدوري الإسباني</h3>
+          <div class="video-card-meta">
+            <span>منذ 3 ساعات</span>
+            <span>850 ألف مشاهدة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#7a1a1a,#bb2222); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">🎙</div>
+          <div class="video-card-play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="video-card-duration">08:12</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">مقابلة</span>
+          <h3 class="video-card-title">مبابي يتحدث عن مستقبله ومسيرته مع المنتخب الفرنسي</h3>
+          <div class="video-card-meta">
+            <span>منذ 5 ساعات</span>
+            <span>1.2 مليون مشاهدة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#3a1a7a,#6622bb); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">📊</div>
+          <div class="video-card-play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="video-card-duration">12:05</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">تحليل</span>
+          <h3 class="video-card-title">تحليل تكتيكي: أسرار نجاح منظومة أتالانتا الدفاعية هذا الموسم</h3>
+          <div class="video-card-meta">
+            <span>منذ يوم</span>
+            <span>440 ألف مشاهدة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#1a6a7a,#228899); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">🏟</div>
+          <div class="video-card-play">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="video-card-duration">03:28</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">كواليس</span>
+          <h3 class="video-card-title">خلف الكواليس: استعدادات الهلال قبل نهائي البطولة العربية</h3>
+          <div class="video-card-meta">
+            <span>منذ يومين</span>
+            <span>620 ألف مشاهدة</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Top Goals Section -->
+    <h2 class="videos-section-title" style="margin-top: 10px;">🎯 أفضل الأهداف هذا الشهر</h2>
+    <div class="videos-grid">
+
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#5a6a1a,#889922); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">⚽</div>
+          <div class="video-card-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <span class="video-card-duration">01:12</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">هدف الشهر</span>
+          <h3 class="video-card-title">هدف رائع من مسافة 40 مترًا يُذهل جماهير البرنابيو</h3>
+          <div class="video-card-meta"><span>منذ أسبوع</span><span>3.1 مليون مشاهدة</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#0d5a2c,#1a7a3c); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">💥</div>
+          <div class="video-card-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <span class="video-card-duration">02:05</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">هدف عالمي</span>
+          <h3 class="video-card-title">رونالدو يسجل ضربة حرة مذهلة بأسلوبه الكلاسيكي الشهير</h3>
+          <div class="video-card-meta"><span>منذ أسبوع</span><span>5.8 مليون مشاهدة</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#7a3a1a,#bb6622); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">🌟</div>
+          <div class="video-card-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <span class="video-card-duration">01:45</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">مهارة</span>
+          <h3 class="video-card-title">أفضل 10 مهارات وتمريرات إبداعية في الجولة الماضية</h3>
+          <div class="video-card-meta"><span>منذ أسبوعين</span><span>2.2 مليون مشاهدة</span></div>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="openModal()">
+        <div class="video-card-thumb">
+          <div class="video-card-thumb-img" style="background:linear-gradient(135deg,#1a1a7a,#2222bb); display:flex; align-items:center; justify-content:center; font-size:48px; height:160px;">🏅</div>
+          <div class="video-card-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <span class="video-card-duration">04:33</span>
+        </div>
+        <div class="video-card-body">
+          <span class="news-card-cat" style="font-size:11px;">ملخص</span>
+          <h3 class="video-card-title">ملخص: كلاسيكو الديربي السعودي الهلال ضد النصر — أهداف مجنونة</h3>
+          <div class="video-card-meta"><span>منذ أسبوعين</span><span>4.4 مليون مشاهدة</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="header-logo">
+          <div class="logo-icon"><img src="images/logo.png" alt="كورة90" /></div>
+          <div class="logo-text"><span class="site-name">كورة90</span><span class="site-tagline">أخبار الكرة</span></div>
+        </div>
+        <p class="footer-desc">موقعك الأول لمتابعة أحدث أخبار كرة القدم والرياضة العالمية والعربية.</p>
+      </div>
+      <div><h4 class="footer-col-title">الأقسام</h4><ul class="footer-links"><li><a href="index.html">الرئيسية</a></li><li><a href="news.html">أخبار</a></li><li><a href="matches.html">مباريات</a></li><li><a href="reports.html">تقارير</a></li><li><a href="investigations.html">تحقيقات</a></li><li><a href="health.html">صحة ولياقة</a></li><li><a href="videos.html">فيديو</a></li></ul></div>
+      <div><h4 class="footer-col-title">الدوريات</h4><ul class="footer-links"><li><a href="#">الدوري السعودي</a></li><li><a href="#">الدوري الإنجليزي</a></li><li><a href="#">الدوري الإسباني</a></li></ul></div>
+      <div><h4 class="footer-col-title">تواصل معنا</h4><ul class="footer-links"><li><a href="#">عن الموقع</a></li><li><a href="#">اتصل بنا</a></li><li><a href="#">سياسة الخصوصية</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>جميع الحقوق محفوظة &copy; 2025 كورة90</p></div>
+  </footer>
+
+  
+  <script>
+    function openModal() {
+      document.getElementById('videoModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('videoModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('videoModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.querySelectorAll('.health-cat-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.health-cat-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+  <script src="js/header.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
