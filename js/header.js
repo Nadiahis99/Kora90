@@ -15,16 +15,10 @@
   <header class="site-header">
 
     <div class="header-top">
+
       <a href="index.html" class="header-logo">
         <div class="logo-icon">
-             <img src="images/logo.png" alt="كورة90" />
-            <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="1.5"/>
-            <polygon points="12,4 14.5,8 12,9.5 9.5,8" fill="white"/>
-            <polygon points="19.5,9 18,13 15.5,12 15.5,9" fill="white"/>
-            <polygon points="17,18.5 13.5,18 13,15.5 16,14.5" fill="white"/>
-            <polygon points="7,18.5 8,15 11,14.5 10.5,18" fill="white"/>
-            <polygon points="4.5,9 8.5,9 8.5,12 6,13" fill="white"/>
-          </svg>
+          <img src="images/logo.png" alt="كورة90" />
         </div>
         <div class="logo-text">
           <span class="site-name">كورة90</span>
@@ -47,7 +41,7 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         </button>
-<button class="btn-login" onclick="window.location.href='admin-login.html'">
+        <button class="btn-login" onclick="window.location.href='admin-login.html'">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
           </svg>
@@ -57,6 +51,7 @@
           <span></span><span></span><span></span>
         </button>
       </div>
+
     </div>
 
     <nav class="main-nav" id="main-nav">
@@ -117,7 +112,6 @@
           <span class="ticker-min live">62'</span>
         </div>
         <div class="ticker-sep">|</div>
-        <!-- Duplicate for seamless loop -->
         <div class="ticker-match">
           <span class="ticker-team">ريال مدريد</span>
           <span class="ticker-score">2 - 1</span>
@@ -158,7 +152,6 @@
   </div>`;
 
   // ── الحقن في الصفحة ───────────────────────────────────────
-  // استبدال الهيدر الموجود
   const existingHeader = document.querySelector('header.site-header');
   if (existingHeader) {
     existingHeader.outerHTML = headerHTML;
@@ -169,7 +162,6 @@
   // إضافة التيكر بعد الهيدر مباشرة
   const injectedHeader = document.querySelector('header.site-header');
   if (injectedHeader) {
-    // إزالة أي تيكر موجود مسبقاً
     const existingTicker = document.querySelector('.matches-ticker');
     if (existingTicker) existingTicker.remove();
     injectedHeader.insertAdjacentHTML('afterend', tickerHTML);
