@@ -2058,62 +2058,39 @@ body.admin-dash-body {
   }
 }
 @media (max-width: 768px) {
-  .hero-section {
-    height: 380px;
+
+  /* إصلاح ترتيب الهيدر */
+  .header-top {
+    flex-direction: row;
+    padding: 0 12px;
+    height: 60px;
+    gap: 8px;
   }
 
-  .hero-title {
-    font-size: 22px;
-  }
-
-  .hero-content {
-    padding: 16px 20px;
-    max-width: 100%;
-  }
-
-  .hero-subtitle {
-    font-size: 13px;
+  /* إخفاء السيرش على الموبايل */
+  .header-search {
     display: none;
   }
 
-  .matches-ticker {
-    height: 36px;
+  /* تصغير زرار اللوجين */
+  .btn-login {
+    padding: 8px 12px;
+    font-size: 13px;
+    gap: 5px;
   }
 
-  .ticker-label {
-    font-size: 10px;
-    padding: 0 10px;
+  /* تصغير اللوجو */
+  .logo-icon {
+    width: 40px;
+    height: 40px;
   }
 
-  .news-grid {
-    grid-template-columns: 1fr;
+  .logo-text .site-name {
+    font-size: 18px;
   }
 
-  .matches-scroll {
-    gap: 10px;
+  .logo-text .site-tagline {
+    display: none;
   }
 
-  .match-card {
-    min-width: 180px;
-  }
-
-  .reports-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .report-featured {
-    height: 220px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .section-latest,
-  .section-matches,
-  .section-reports {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }
