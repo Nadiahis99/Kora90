@@ -1,6 +1,6 @@
 /* =============================================
    كورة90 - Sports News Website
-   Main Stylesheet - Mobile Responsive Version
+   Main Stylesheet
    ============================================= */
 
 /* --- CSS Variables --- */
@@ -693,12 +693,7 @@ img {
   flex-shrink: 0;
 }
 
-.match-league {
-  font-size: 11px;
-  color: var(--gray-text);
-  margin-bottom: 12px;
-  font-weight: 500;
-}
+.match-league { font-size: 11px; color: var(--gray-text); margin-bottom: 12px; font-weight: 500; }
 
 .match-teams {
   display: flex;
@@ -797,11 +792,7 @@ img {
   margin-top: 8px;
 }
 
-.reports-side {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
+.reports-side { display: flex; flex-direction: column; gap: 14px; }
 
 .report-side-card {
   display: flex;
@@ -1490,7 +1481,6 @@ body.admin-body {
 }
 
 .admin-form-group input.error { border-color: #e74c3c; }
-
 .admin-input-icon { position: relative; }
 .admin-input-icon input { padding-right: 44px; }
 
@@ -1792,15 +1782,10 @@ body.admin-dash-body {
     gap: 10px;
   }
 
-  .logo-text .site-tagline { display: none; }
-  .logo-text .site-name { font-size: 18px; }
-
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-  }
-
+  .logo-icon { width: 40px; height: 40px; }
   .logo-icon svg { width: 22px; height: 22px; }
+  .logo-text .site-name { font-size: 18px; }
+  .logo-text .site-tagline { display: none; }
 
   .header-search {
     flex: 1;
@@ -1812,15 +1797,12 @@ body.admin-dash-body {
     font-size: 13px;
   }
 
-  /* Hide theme button on mobile */
   .btn-theme { display: none; }
 
   .btn-login {
     padding: 8px 14px;
     font-size: 13px;
   }
-
-  .btn-login span { display: none; }
 
   /* Nav */
   .menu-toggle { display: flex; }
@@ -1862,8 +1844,6 @@ body.admin-dash-body {
     gap: 5px;
   }
 
-  .ticker-label span:last-child { display: none; }
-
   .ticker-match { gap: 7px; padding: 0 12px; font-size: 12px; }
 
   /* Hero */
@@ -1890,10 +1870,7 @@ body.admin-dash-body {
   .hero-title { font-size: 20px; margin-bottom: 8px; }
   .hero-subtitle { display: none; }
 
-  .btn-read-more {
-    font-size: 13px;
-    padding: 9px 18px;
-  }
+  .btn-read-more { font-size: 13px; padding: 9px 18px; }
 
   .slider-arrow { width: 34px; height: 34px; }
   .slider-arrow svg { width: 15px; height: 15px; }
@@ -1944,12 +1921,7 @@ body.admin-dash-body {
   .investigation-featured-title { font-size: 18px; }
 
   /* Health */
-  .health-hero-strip {
-    grid-template-columns: 1fr;
-    padding: 28px 16px;
-    gap: 20px;
-  }
-
+  .health-hero-strip { grid-template-columns: 1fr; padding: 28px 16px; gap: 20px; }
   .health-hero-text h1 { font-size: 24px; }
   .health-hero-text p { font-size: 14px; }
   .health-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -1957,7 +1929,6 @@ body.admin-dash-body {
   .health-stat-label { font-size: 11px; }
   .health-cats { padding: 14px 12px; }
   .health-content-grid { grid-template-columns: 1fr; padding: 16px 12px 24px; gap: 20px; }
-
   .health-article-card { grid-template-columns: 110px 1fr; gap: 12px; }
   .health-article-img { width: 110px; height: 110px; }
   .health-article-title { font-size: 14px; }
@@ -1970,7 +1941,6 @@ body.admin-dash-body {
   .video-hero-title { font-size: 17px; }
   .video-play-btn { width: 54px; height: 54px; }
   .video-play-btn svg { width: 20px; height: 20px; }
-
   .videos-section-title { font-size: 17px; padding: 0 12px 0 12px; padding-right: 26px; margin-bottom: 14px; }
   .videos-section-title::before { right: 12px; }
   .videos-grid { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 12px 24px; }
@@ -1979,27 +1949,18 @@ body.admin-dash-body {
   .video-card-title { font-size: 12px; }
 
   /* Admin */
-  .admin-sidebar {
-    transform: translateX(100%);
-    width: 260px;
-  }
-
+  .admin-sidebar { transform: translateX(100%); width: 260px; }
   .admin-sidebar.open { transform: translateX(0); }
-
   .admin-main { margin-right: 0; }
-
   .admin-topbar { padding: 0 16px; height: 56px; }
   .admin-topbar-title { font-size: 16px; }
   .admin-content { padding: 16px; }
-
   .admin-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
   .admin-stat-card { padding: 14px 12px; gap: 10px; }
   .admin-stat-icon { width: 40px; height: 40px; border-radius: 10px; }
   .admin-stat-icon svg { width: 18px; height: 18px; }
   .admin-stat-info h3 { font-size: 20px; }
-
   .admin-login-card { padding: 28px 20px 24px; }
-
   .admin-table-header { padding: 12px 16px; }
   .admin-table th, .admin-table td { padding: 10px 14px; font-size: 12.5px; }
 }
@@ -2010,20 +1971,14 @@ body.admin-dash-body {
 @media (max-width: 480px) {
   .hero-section { height: 260px; }
   .hero-title { font-size: 17px; }
-
   .news-grid { grid-template-columns: 1fr; }
-
   .admin-stats-grid { grid-template-columns: 1fr 1fr; }
-
   .health-stats { grid-template-columns: repeat(3, 1fr); }
   .health-stat-card { padding: 12px 8px; }
   .health-stat-number { font-size: 18px; }
-
   .videos-grid { grid-template-columns: 1fr; }
   .video-card-thumb { height: 180px; }
-
   .ticker-label { padding: 0 8px; font-size: 10px; }
-
   .btn-login { padding: 7px 10px; }
   .header-search input { font-size: 12px; }
 }
@@ -2056,41 +2011,4 @@ body.admin-dash-body {
     display: flex;
     align-items: center;
   }
-}
-@media (max-width: 768px) {
-
-  /* إصلاح ترتيب الهيدر */
-  .header-top {
-    flex-direction: row;
-    padding: 0 12px;
-    height: 60px;
-    gap: 8px;
-  }
-
-  /* إخفاء السيرش على الموبايل */
-  .header-search {
-    display: none;
-  }
-
-  /* تصغير زرار اللوجين */
-  .btn-login {
-    padding: 8px 12px;
-    font-size: 13px;
-    gap: 5px;
-  }
-
-  /* تصغير اللوجو */
-  .logo-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo-text .site-name {
-    font-size: 18px;
-  }
-
-  .logo-text .site-tagline {
-    display: none;
-  }
-
 }
